@@ -5,29 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Page 2</title>
-    <link rel="stylesheet" crossorigin href="/velox-nix/assets/styles-guStct1H.css">
+    <link rel="stylesheet" crossorigin href="/velox-nix/assets/styles-CMzYFVo3.css">
   </head>
   <body>
     <header class="header">
-  <div class="container">
+  <div class="container header__container">
+    <a href="/" class="logo">
+      <span class="logo__dot"></span>Velox<span class="logo__zone">Nix</span>
+    </a>
+
     <nav class="nav">
-      <a class="nav-logo" href="./index.html" aria-label="Site logo">
-        <svg class="nav-logo-icon" width="100" height="30">
-          <use href="{=$icon-path}"></use>
-        </svg>
-      </a>
-      <ul class="nav-list">
-        <li class="nav-item">
-          <a class="nav-link {=$highlight-act}" href="./page-2.html">Page 2</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link {=$highlight-curr}" href="./page-3.html">Page 3</a>
-        </li>
+      <ul class="nav__list">
+        <li><a href="#hero" class="nav__link">Главная</a></li>
+        <li><a href="#platform" class="nav__link">Платформа</a></li>
+        <li><a href="#benefits" class="nav__link">Выгода</a></li>
+        <li><a href="#innovations" class="nav__link">Инновации</a></li>
+    
       </ul>
     </nav>
+
+    <div class="header__actions">
+      <a href="#contact" class="btn btn--header hide-mobile">
+        <span>Связаться</span>
+        <i data-lucide="arrow-up-right"></i>
+      </a>
+      <button class="burger" id="burger-menu">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
   </div>
 </header>
 
+<div class="mobile-menu" id="mobile-menu">
+  <nav class="mobile-nav">
+    <a href="#hero" class="mobile-link">Главная</a>
+    <a href="#platform" class="mobile-link">Платформа</a>
+    <a href="#benefits" class="mobile-link">Выгода</a>
+    <a href="#innovations" class="mobile-link">Инновации</a>
+    <a href="#contact" class="mobile-link btn-accent">Начать сейчас</a>
+  </nav>
+</div>
 
     <main>
       <div class="container">
@@ -38,20 +56,58 @@
     </main>
 
     <footer class="footer">
-  <div class="container">
-    <p class="footer-desc">
-      Made with ✨ by
-      <a
-        class="footer-link"
-        href="https://goit.global/ua/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        GoIT team
+  <div class="container footer__grid">
+    <div class="footer__col">
+      <a href="/" class="logo footer__logo">
+        <span class="logo__dot"></span>
+        Velox-Nix
       </a>
-    </p>
+      <p class="footer__description">
+        Инновационная цифровая инфраструктура для разработки и внедрения AI-ассистентов нового поколения.
+      </p>
+    </div>
+
+    <div class="footer__col">
+      <h4 class="footer__title">Навигация</h4>
+      <ul class="footer__links">
+        <li><a href="#hero">Главная</a></li>
+        <li><a href="#tech">Технологии</a></li>
+        <li><a href="#benefits">Преимущества</a></li>
+        <li><a href="#blog">Блог</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h4 class="footer__title">Документы</h4>
+      <ul class="footer__links">
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="cookies.html">Cookie Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="disclaimer.html">Disclaimer</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h4 class="footer__title">Контакты</h4>
+      <ul class="footer__contacts">
+        <li>
+          <i data-lucide="phone"></i>
+          <a href="tel:+493012345678">+49 (30) 1234-5678</a>
+        </li>
+        <li>
+          <i data-lucide="mail"></i>
+          <a href="mailto:hello@velox-nix.blog">hello@velox-nix.blog</a>
+        </li>
+        <li>
+          <i data-lucide="map-pin"></i>
+          <span>Friedrichstraße 176, 10117 Berlin, Germany</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer__bottom">
+    <p>&copy; 2025 Velox-Nix. Платформа уже доступна в Европе.</p>
   </div>
 </footer>
-
   </body>
 </html>

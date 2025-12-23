@@ -1,56 +1,303 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/velox-nix/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Velox-Nix | Искусство создания AI-ботов</title>
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Syne:wght@700;800&display=swap"
+    rel="stylesheet">
+
+  <script src="https://unpkg.com/lucide@latest"></script>
     <script type="module" crossorigin src="/velox-nix/index.js"></script>
-    <link rel="stylesheet" crossorigin href="/velox-nix/assets/styles-guStct1H.css">
+    <link rel="stylesheet" crossorigin href="/velox-nix/assets/styles-CMzYFVo3.css">
   </head>
   <body>
     <header class="header">
-  <div class="container">
+  <div class="container header__container">
+    <a href="/" class="logo">
+      <span class="logo__dot"></span>Velox<span class="logo__zone">Nix</span>
+    </a>
+
     <nav class="nav">
-      <a class="nav-logo" href="./index.html" aria-label="Site logo">
-        <svg class="nav-logo-icon" width="100" height="30">
-          <use href="{=$icon-path}"></use>
-        </svg>
-      </a>
-      <ul class="nav-list">
-        <li class="nav-item">
-          <a class="nav-link {=$highlight-act}" href="./page-2.html">Page 2</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link {=$highlight-curr}" href="./page-3.html">Page 3</a>
-        </li>
+      <ul class="nav__list">
+        <li><a href="#hero" class="nav__link">Главная</a></li>
+        <li><a href="#platform" class="nav__link">Платформа</a></li>
+        <li><a href="#benefits" class="nav__link">Выгода</a></li>
+        <li><a href="#innovations" class="nav__link">Инновации</a></li>
+    
       </ul>
     </nav>
+
+    <div class="header__actions">
+      <a href="#contact" class="btn btn--header hide-mobile">
+        <span>Связаться</span>
+        <i data-lucide="arrow-up-right"></i>
+      </a>
+      <button class="burger" id="burger-menu">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
   </div>
 </header>
 
+<div class="mobile-menu" id="mobile-menu">
+  <nav class="mobile-nav">
+    <a href="#hero" class="mobile-link">Главная</a>
+    <a href="#platform" class="mobile-link">Платформа</a>
+    <a href="#benefits" class="mobile-link">Выгода</a>
+    <a href="#innovations" class="mobile-link">Инновации</a>
+    <a href="#contact" class="mobile-link btn-accent">Начать сейчас</a>
+  </nav>
+</div>
 
     <main>
       <!-- Loads the specified .html file -->
-      
+      <section class="hero" id="hero">
+    <div class="container">
+        <h1 class="hero__title split-text">Технологии, которые работают на вас</h1>
+        <p class="hero__subtitle">Разработка AI-ассистентов от простых чатов до сложных экосистем. Воплотите мечты в
+            реальность с Velox-Nix.</p>
+        <div class="hero__btns">
+            <a href="#contact" class="btn btn--primary">Запросить доступ</a>
+            <a href="#platform" class="btn btn--outline">Узнать детали</a>
+        </div>
+    </div>
+</section>
+
+<section class="platform" id="platform">
+    <div class="container grid-2">
+        <div class="platform__content">
+            <span class="badge">Технология нового поколения</span>
+            <h2 class="section-title">Платформа года для вашего старта</h2>
+            <p>Наша передовая цифровая инфраструктура позволяет запустить AI-инструменты для реальных задач за считанные
+                дни. Удобная адаптация без сложностей и пошаговый путь, понятный каждому.</p>
+            <ul class="check-list">
+                <li><i data-lucide="check"></i> Быстрый и лёгкий старт</li>
+                <li><i data-lucide="check"></i> Подключение занимает 2 минуты</li>
+                <li><i data-lucide="check"></i> Легко разобраться без опыта</li>
+            </ul>
+        </div>
+        <div class="platform__image">
+            <img src="img/placeholder.png" alt="AI Interface" class="reveal-img">
+        </div>
+    </div>
+</section>
+
+<section class="benefits" id="benefits">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title center">Почему выбирают нас</h2>
+            <p class="center">Стратегия роста на базе инноваций и проверенных методологий.</p>
+        </div>
+        <div class="benefits__grid">
+            <div class="benefit-card">
+                <i data-lucide="zap"></i>
+                <h3>Инновации</h3>
+                <p>Решения, которые меняют правила игры в мире мессенджеров.</p>
+            </div>
+            <div class="benefit-card">
+                <i data-lucide="trending-up"></i>
+                <h3>Пассивный доход</h3>
+                <p>Технология для формирования стабильного пассивного дохода.</p>
+            </div>
+            <div class="benefit-card">
+                <i data-lucide="shield-check"></i>
+                <h3>Экспертность</h3>
+                <p>Методологии, доказавшие эффективность в странах ЕС.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="innovations" id="innovations">
+    <div class="container">
+        <div class="innovations__banner">
+            <h2 class="split-text">Переосмыслите подход к развитию</h2>
+            <p>Оцените перспективы проекта прямо сейчас. Доступ к платформе открыт для резидентов Европы.</p>
+            <a href="#contact" class="btn btn--primary">Получить больше информации</a>
+        </div>
+    </div>
+</section>
+
+<section class="tech" id="tech">
+    <div class="container">
+        <div class="section-header">
+            <span class="badge">Stack</span>
+            <h2 class="section-title">Передовая цифровая инфраструктура</h2>
+        </div>
+        <div class="tech__grid">
+            <div class="tech-card">
+                <div class="tech-card__icon"><i data-lucide="cpu"></i></div>
+                <h3>LLM Engine</h3>
+                <p>Интеграция с GPT-4o, Claude 3.5 и локальными моделями Llama для максимальной приватности.</p>
+                <div class="tech-card__tag">High-Load</div>
+            </div>
+            <div class="tech-card active">
+                <div class="tech-card__icon"><i data-lucide="layers"></i></div>
+                <h3>RAG Systems</h3>
+                <p>Технология поиска по вашим документам. Бот знает ваш продукт лучше, чем техподдержка.</p>
+                <div class="tech-card__tag">Smart Context</div>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card__icon"><i data-lucide="bot"></i></div>
+                <h3>Voice AI</h3>
+                <p>Решения для телефонии и голосовых ассистентов с естественным звучанием и задержкой менее 500мс.</p>
+                <div class="tech-card__tag">Real-time</div>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card__icon"><i data-lucide="workflow"></i></div>
+                <h3>Automation</h3>
+                <p>Сложные цепочки действий: от парсинга данных до автоматического выставления счетов.</p>
+                <div class="tech-card__tag">No-Code / API</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cases" id="cases">
+    <div class="container">
+        <h2 class="section-title center">Реальные результаты</h2>
+        <div class="cases__list">
+            <div class="case-item">
+                <div class="case-item__num">01</div>
+                <div class="case-item__info">
+                    <h3>Финтех-ассистент</h3>
+                    <p>Автоматизация 85% запросов в Telegram для немецкого необанка.</p>
+                </div>
+                <div class="case-item__stats">
+                    <span class="stat-val">+400%</span>
+                    <span class="stat-label">Скорость ответа</span>
+                </div>
+            </div>
+            <div class="case-item">
+                <div class="case-item__num">02</div>
+                <div class="case-item__info">
+                    <h3>AI-рекрутер</h3>
+                    <p>Первичный скрининг кандидатов и назначение интервью в 24/7 режиме.</p>
+                </div>
+                <div class="case-item__stats">
+                    <span class="stat-val">1200+</span>
+                    <span class="stat-label">Часов сэкономлено</span>
+                </div>
+            </div>
+            <div class="case-item">
+                <div class="case-item__num">03</div>
+                <div class="case-item__info">
+                    <h3>E-commerce Bot</h3>
+                    <p>Персонализированные рекомендации товаров на базе предпочтений пользователя.</p>
+                </div>
+                <div class="case-item__stats">
+                    <span class="stat-val">22%</span>
+                    <span class="stat-label">Рост конверсии</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="contact" id="contact">
+    <div class="container">
+        <div class="contact__wrapper">
+            <div class="contact__info">
+                <h2 class="section-title">Бесплатная консультация</h2>
+                <p>Экспертная поддержка на всех этапах вашего пути.</p>
+            </div>
+            <form class="contact-form" id="ai-form">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Ваше имя" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" name="phone" id="phone-input" placeholder="Телефон (только цифры)" required>
+                </div>
+                <div class="form-group captcha-group">
+                    <label id="captcha-label">Сколько будет 5 + 3?</label>
+                    <input type="number" id="captcha-input" placeholder="Ответ" required>
+                </div>
+                <label class="checkbox-container">
+                    <input type="checkbox" required>
+                    <span class="checkmark"></span>
+                    Я согласен с политикой обработки персональных данных
+                </label>
+                <button type="submit" class="btn btn--primary full-width">Пройти регистрацию</button>
+                 </form> 
+                <div id="form-success" class="form-status">Ваша заявка успешно отправлена!</div>
+          
+        </div>
+    </div>
+</section>
     </main>
 
     <footer class="footer">
-  <div class="container">
-    <p class="footer-desc">
-      Made with ✨ by
-      <a
-        class="footer-link"
-        href="https://goit.global/ua/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        GoIT team
+  <div class="container footer__grid">
+    <div class="footer__col">
+      <a href="/" class="logo footer__logo">
+        <span class="logo__dot"></span>
+        Velox-Nix
       </a>
-    </p>
+      <p class="footer__description">
+        Инновационная цифровая инфраструктура для разработки и внедрения AI-ассистентов нового поколения.
+      </p>
+    </div>
+
+    <div class="footer__col">
+      <h4 class="footer__title">Навигация</h4>
+      <ul class="footer__links">
+        <li><a href="#hero">Главная</a></li>
+        <li><a href="#tech">Технологии</a></li>
+        <li><a href="#benefits">Преимущества</a></li>
+        <li><a href="#blog">Блог</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h4 class="footer__title">Документы</h4>
+      <ul class="footer__links">
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="cookies.html">Cookie Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="disclaimer.html">Disclaimer</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h4 class="footer__title">Контакты</h4>
+      <ul class="footer__contacts">
+        <li>
+          <i data-lucide="phone"></i>
+          <a href="tel:+493012345678">+49 (30) 1234-5678</a>
+        </li>
+        <li>
+          <i data-lucide="mail"></i>
+          <a href="mailto:hello@velox-nix.blog">hello@velox-nix.blog</a>
+        </li>
+        <li>
+          <i data-lucide="map-pin"></i>
+          <span>Friedrichstraße 176, 10117 Berlin, Germany</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer__bottom">
+    <p>&copy; 2025 Velox-Nix. Платформа уже доступна в Европе.</p>
   </div>
 </footer>
-
+    <div class="cookie-popup" id="cookie-popup">
+      <p>Этот сайт использует cookies для улучшения работы. Подробнее — в нашей <a href="./cookies.html">Cookie политике</a>.
+      </p>
+      <button class="btn btn--accent btn--sm" id="cookie-accept">Принять</button>
+    </div>
+    <script src="https://unpkg.com/split-type"></script>
+<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
   </body>
 </html>
