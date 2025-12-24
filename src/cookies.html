@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Velox-Nix | Искусство создания AI-ботов</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23000'/><text x='50%' y='50%' dominant-baseline='central' text-anchor='middle' fill='white' font-family='sans-serif' font-size='50' font-weight='bold'>VN</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Syne:wght@700;800&display=swap"
+    rel="stylesheet">
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <load
+      src="./partials/header.html"
+/>
+
+<main>
+  <section class="legal-page">
+      <div class="container">
+
+          <div class="badge">Legal / Privacy</div>
+          <h1 class="hero__title split-text">Политика Cookie</h1>
+
+          <div class="legal-content reveal" style="max-width: 800px; margin-top: 40px;">
+              <p class="hero__subtitle">
+                  Добро пожаловать на <strong>velox-nix.blog</strong>. Чтобы сделать ваш цифровой опыт максимально плавным и персонализированным, мы используем файлы cookie. Ниже мы объясняем, как это работает.
+              </p>
+
+              <div class="tech-card" style="margin-bottom: 40px;">
+                  <h2 style="margin-bottom: 20px; color: var(--accent);">01. Что это такое?</h2>
+                  <p style="color: var(--text-dim);">
+                      Файлы cookie — это небольшие фрагменты данных, которые сохраняются в вашем браузере. Они позволяют сайту «узнавать» вас, запоминать настройки (например, темную тему) и анализировать, какие разделы блога вам наиболее интересны.
+                  </p>
+              </div>
+
+              <h2 style="margin-bottom: 30px;">Категории технологий</h2>
+
+              <ul class="check-list" style="margin-bottom: 50px;">
+                  <li>
+                      <i data-lucide="shield-check"></i>
+                      <div>
+                          <strong>Обязательные:</strong>
+                          <p style="font-size: 0.9rem; color: var(--text-dim);">Необходимы для работы базовых функций безопасности и навигации по сайту.</p>
+                      </div>
+                  </li>
+                  <li>
+                      <i data-lucide="bar-chart-3"></i>
+                      <div>
+                          <strong>Аналитические:</strong>
+                          <p style="font-size: 0.9rem; color: var(--text-dim);">Помогают нам измерять трафик и понимать, какие статьи читают чаще всего.</p>
+                      </div>
+                  </li>
+                  <li>
+                      <i data-lucide="settings-2"></i>
+                      <div>
+                          <strong>Функциональные:</strong>
+                          <p style="font-size: 0.9rem; color: var(--text-dim);">Запоминают ваш выбор языка, региона и кастомные настройки интерфейса.</p>
+                      </div>
+                  </li>
+              </ul>
+
+              <h2 style="margin-bottom: 20px;">Ваш контроль</h2>
+              <p style="color: var(--text-dim); margin-bottom: 30px;">
+                  Вы в любой момент можете заблокировать или удалить cookie через настройки вашего браузера. Однако помните, что это может повлиять на визуальную целостность и удобство использования <strong>velox-nix.blog</strong>.
+              </p>
+
+              <div class="innovations__banner" style="text-align: left; padding: 40px;">
+                  <h3 style="color: var(--accent); margin-bottom: 15px;">Есть вопросы?</h3>
+                  <p style="margin-bottom: 20px;">Мы всегда на связи для уточнения деталей обработки ваших данных.</p>
+                  <a href="mailto:hello@velox-nix.blog" class="btn btn--primary">
+                      <i data-lucide="mail"></i> hello@velox-nix.blog
+                  </a>
+              </div>
+
+              <p style="margin-top: 50px; font-size: 0.8rem; color: var(--text-dim); border-top: 1px solid var(--glass-border); padding-top: 20px;">
+                  Последнее обновление: декабрь 2025 г. Продолжая использовать сайт, вы соглашаетесь с текущей политикой.
+              </p>
+          </div>
+      </div>
+  </section>
+</main>
+
+    <load src="./partials/footer.html" />
+    <div class="cookie-popup" id="cookie-popup">
+      <p>Этот сайт использует cookies для улучшения работы. Подробнее — в нашей <a href="./cookies.html">Cookie политике</a>.
+      </p>
+      <button class="btn btn--accent btn--sm" id="cookie-accept">Принять</button>
+    </div>
+    <script src="https://unpkg.com/split-type"></script>
+<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
