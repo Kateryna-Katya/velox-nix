@@ -556,7 +556,7 @@ h3,
     text-wrap: balance;
     display: block;
 }
-/* PROJECT: velox-nix.blog 
+/* PROJECT: velox-nix.blog
    FIX: No word-break in H1 (SplitType fix)
    SECTIONS: All (Platform, Innovations, Blog, Footer, Contacts)
 */
@@ -952,7 +952,7 @@ a {
     }
 }
 /* PROJECT: velox-nix.blog
-   FEATURES: 
+   FEATURES:
    - No H1 word-breaks (SplitType fix)
    - Header button hidden on mobile
    - Success message hidden by default
@@ -1220,7 +1220,7 @@ a {
 }
 
 .innovations__banner h2 {
-    font-size: 3rem;
+    font-size: 1.6rem;
     margin-bottom: 20px;
 }
 
@@ -1345,4 +1345,156 @@ a {
     .hero {
         text-align: center;
     }
+}
+/* --- Стилизация секции Platform --- */
+
+.platform {
+  position: relative;
+  background: radial-gradient(circle at 10% 50%, var(--accent-soft) 0%, transparent 40%);
+}
+
+.platform .grid-2 {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr; /* Текст чуть шире картинки */
+  gap: 100px;
+  align-items: center;
+}
+
+.platform__content {
+  position: relative;
+  z-index: 2;
+}
+
+.platform__content p {
+  font-size: 1.1rem;
+  color: var(--text-dim);
+  margin-bottom: 35px;
+  max-width: 540px;
+}
+
+/* Стилизация списка преимуществ */
+.check-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.check-list li {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-weight: 500;
+  color: var(--text);
+  font-size: 1.05rem;
+  transition: var(--transition);
+}
+
+.check-list li i {
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(204, 255, 0, 0.2);
+}
+
+.check-list li:hover {
+  transform: translateX(10px);
+  color: var(--accent);
+}
+
+/* Стилизация изображения */
+.platform__image {
+  position: relative;
+  perspective: 1000px; /* Эффект глубины */
+}
+
+.platform__image::before {
+  content: '';
+  position: absolute;
+  inset: -20px;
+  background: var(--accent);
+  filter: blur(80px);
+  opacity: 0.1;
+  z-index: -1;
+}
+
+.reveal-img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--glass-border);
+  background: var(--glass);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+  display: block;
+  transition: var(--transition);
+  transform: rotateY(-5deg) rotateX(5deg); /* Небольшой 3D поворот */
+}
+
+.platform__image:hover .reveal-img {
+  transform: rotateY(0deg) rotateX(0deg) scale(1.02);
+  border-color: var(--accent);
+  box-shadow: 0 40px 80px rgba(204, 255, 0, 0.15);
+}
+
+/* Декоративный элемент "Сетка" на фоне */
+.platform__image::after {
+  content: '';
+  position: absolute;
+  bottom: -30px;
+  right: -30px;
+  width: 200px;
+  height: 200px;
+  background-image: radial-gradient(var(--glass-border) 1px, transparent 1px);
+  background-size: 20px 20px;
+  z-index: -1;
+}
+
+/* Адаптив для планшетов и мобилок */
+@media (max-width: 992px) {
+  .platform .grid-2 {
+      grid-template-columns: 1fr;
+      gap: 60px;
+      text-align: center;
+  }
+
+  .platform__content p {
+      margin-inline: auto;
+  }
+
+  .check-list {
+      align-items: center;
+  }
+
+  .reveal-img {
+      transform: none; /* Убираем 3D на мобилках для удобства */
+      max-width: 500px;
+      margin: 0 auto;
+  }
+}
+/* Скрываем сообщение об успехе по умолчанию */
+.form-status {
+  display: none;
+  background: #d4edda;
+  color: #155724;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #c3e6cb;
+  text-align: center;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+/* Добавим немного стиля для группы капчи */
+.captcha-group {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+.captcha-group label {
+  font-weight: bold;
+  white-space: nowrap;
 }

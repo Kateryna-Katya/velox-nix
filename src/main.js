@@ -1,94 +1,152 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // 1. Lenis Smooth Scroll
-    const lenis = new Lenis();
-    function raf(time) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
 
-    // 2. Lucide Icons
-    if (window.lucide) { window.lucide.createIcons(); }
+  // --- 1. LENIS SMOOTH SCROLL ---
+  // Плавный скролл для всей страницы
+  const lenis = new Lenis();
+  function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf);
 
-    // 3. Анимация заголовков (forEach + SplitType)
-    const splitTitles = document.querySelectorAll('.split-text');
-    splitTitles.forEach(el => {
-        // Обязательно разбиваем по словам И буквам, чтобы применить white-space: nowrap к словам
-        const text = new SplitType(el, { types: 'words,chars' });
-        
-        gsap.from(text.chars, {
-            scrollTrigger: { trigger: el, start: "top 90%" },
-            opacity: 0,
-            y: 30,
-            stagger: 0.02,
-            duration: 1,
-            ease: "power4.out"
-        });
-    });
 
-    // 4. Мобильное меню (forEach для кнопок)
-    const burgers = document.querySelectorAll('#burger-menu');
-    const mobileMenu = document.querySelector('#mobile-menu');
-    const mobileLinks = document.querySelectorAll('.mobile-link');
+  // --- 2. LUCIDE ICONS ---
+  // Инициализация иконок, если библиотека подключена
+  if (window.lucide) {
+      window.lucide.createIcons();
+  }
 
-    burgers.forEach(burger => {
-        burger.addEventListener('click', () => {
-            burger.classList.toggle('open');
-            if (mobileMenu) {
-                mobileMenu.classList.toggle('active');
-                document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
-            }
-        });
-    });
 
-    mobileLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            mobileMenu?.classList.remove('active');
-            burgers.forEach(b => b.classList.remove('open'));
-            document.body.style.overflow = '';
-        });
-    });
+  // --- 3. АНИМАЦИЯ ЗАГОЛОВКОВ (SplitType + GSAP) ---
+  const splitTitles = document.querySelectorAll('.split-text');
+  splitTitles.forEach(el => {
+      // Разбиваем текст на слова и символы
+      const text = new SplitType(el, { types: 'words,chars' });
 
-    // 5. Логика форм (forEach)
-    const forms = document.querySelectorAll('.contact-form');
-    forms.forEach(form => {
-        const captchaLabel = form.querySelector('.captcha-label');
-        const captchaInput = form.querySelector('.captcha-input');
-        const successMessage = document.getElementById('form-success');
-        
-        // Генерация примера
-        const a = Math.floor(Math.random() * 10), b = Math.floor(Math.random() * 10);
-        if (captchaLabel) captchaLabel.innerText = `${a} + ${b} = ?`;
+      gsap.from(text.chars, {
+          scrollTrigger: {
+              trigger: el,
+              start: "top 90%",
+              toggleActions: "play none none none"
+          },
+          opacity: 0,
+          y: 30,
+          stagger: 0.02,
+          duration: 1,
+          ease: "power4.out"
+      });
+  });
 
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
 
-            // Валидация капчи
-            if (captchaInput && parseInt(captchaInput.value) !== (a + b)) {
-                alert("Ошибка в расчетах!");
-                return;
-            }
+  // --- 4. МОБИЛЬНОЕ МЕНЮ ---
+  const burgers = document.querySelectorAll('#burger-menu');
+  const mobileMenu = document.querySelector('#mobile-menu');
+  const mobileLinks = document.querySelectorAll('.mobile-link');
 
-            const btn = form.querySelector('button');
-            if (btn) {
-                btn.disabled = true;
-                btn.innerText = "Отправка...";
-            }
+  const toggleMenu = (state) => {
+      const isOpen = state !== undefined ? state : !mobileMenu.classList.contains('active');
 
-            setTimeout(() => {
-                // Прячем форму, показываем успех
-                form.style.display = 'none';
-                if (successMessage) {
-                    successMessage.style.display = 'block';
-                }
-            }, 1000);
-        });
-    });
+      burgers.forEach(b => b.classList.toggle('open', isOpen));
+      if (mobileMenu) {
+          mobileMenu.classList.toggle('active', isOpen);
+          document.body.style.overflow = isOpen ? 'hidden' : '';
+      }
+  };
 
-    // 6. Хедер при скролле
-    window.addEventListener('scroll', () => {
-        const header = document.querySelector('.header');
-        header?.classList.toggle('header--scrolled', window.scrollY > 50);
-    });
+  burgers.forEach(burger => {
+      burger.addEventListener('click', () => toggleMenu());
+  });
+
+  mobileLinks.forEach(link => {
+      link.addEventListener('click', () => toggleMenu(false));
+  });
+
+
+  // --- 5. ЛОГИКА ФОРМ И УСПЕШНАЯ ОТПРАВКА ---
+  const forms = document.querySelectorAll('.contact-form');
+
+  forms.forEach(form => {
+      const captchaLabel = form.querySelector('.captcha-label');
+      const captchaInput = form.querySelector('.captcha-input');
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const successMessage = document.getElementById('form-success');
+
+      // Генерация простой капчи
+      const num1 = Math.floor(Math.random() * 10);
+      const num2 = Math.floor(Math.random() * 10);
+      const answer = num1 + num2;
+
+      if (captchaLabel) captchaLabel.innerText = `${num1} + ${num2} = ?`;
+
+      form.addEventListener('submit', (e) => {
+          e.preventDefault();
+
+          // Проверка капчи
+          if (captchaInput && parseInt(captchaInput.value) !== answer) {
+              // Анимация тряски при ошибке
+              gsap.to(captchaInput, { x: 10, repeat: 3, yoyo: true, duration: 0.05, clearProps: "x" });
+              alert("Ошибка в расчетах! Попробуйте еще раз.");
+              return;
+          }
+
+          // Блокировка кнопки
+          if (submitBtn) {
+              submitBtn.disabled = true;
+              submitBtn.innerText = "Отправка...";
+          }
+
+          // Имитация запроса на сервер (1.5 сек)
+          setTimeout(() => {
+              // Анимация исчезновения формы
+              gsap.to(form, {
+                  opacity: 0,
+                  y: -20,
+                  duration: 0.5,
+                  onComplete: () => {
+                      form.style.display = 'none';
+
+                      if (successMessage) {
+                          successMessage.style.display = 'block';
+                          // Плавное появление сообщения об успехе
+                          gsap.fromTo(successMessage,
+                              { opacity: 0, scale: 0.9, y: 20 },
+                              { opacity: 1, scale: 1, y: 0, duration: 0.7, ease: "back.out(1.7)" }
+                          );
+                      }
+                  }
+              });
+
+              form.reset();
+          }, 1500);
+      });
+  });
+
+
+  // --- 6. ХЕДЕР ПРИ СКРОЛЛЕ ---
+  const header = document.querySelector('.header');
+  const updateHeader = () => {
+      if (header) {
+          header.classList.toggle('header--scrolled', window.scrollY > 50);
+      }
+  };
+
+  window.addEventListener('scroll', updateHeader);
+  updateHeader(); // Проверка при загрузке
+
+
+  // --- 7. ДОПОЛНИТЕЛЬНО: АНИМАЦИЯ ПОЯВЛЕНИЯ БЛОКОВ (REVEAL) ---
+  const revealElements = document.querySelectorAll('.reveal');
+  revealElements.forEach(el => {
+      gsap.from(el, {
+          scrollTrigger: {
+              trigger: el,
+              start: "top 85%",
+          },
+          opacity: 0,
+          y: 40,
+          duration: 1,
+          ease: "power2.out"
+      });
+  });
+
 });
