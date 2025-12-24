@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Velox-Nix | Искусство создания AI-ботов</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23000'/><text x='50%' y='50%' dominant-baseline='central' text-anchor='middle' fill='white' font-family='sans-serif' font-size='50' font-weight='bold'>VN</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Syne:wght@700;800&display=swap"
+    rel="stylesheet">
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+    <script type="module" crossorigin src="/velox-nix/assets/main-CFfUwT6b.js"></script>
+    <link rel="stylesheet" crossorigin href="/velox-nix/assets/main-NZU-DAx1.css">
+  </head>
+  <body>
+    <header class="header">
+  <div class="container header__container">
+    <a href="./#hero" class="logo">
+      <span class="logo__dot"></span>Velox<span class="logo__zone">Nix</span>
+    </a>
+
+    <nav class="nav">
+      <ul class="nav__list">
+        <li><a href="./#hero" class="nav__link">Главная</a></li>
+        <li><a href="./#platform" class="nav__link">Платформа</a></li>
+        <li><a href="./#benefits" class="nav__link">Выгода</a></li>
+        <li><a href="./#innovations" class="nav__link">Инновации</a></li>
+
+      </ul>
+    </nav>
+
+    <div class="header__actions">
+      <a href="./#contact" class="btn btn--header hide-mobile">
+        <span>Связаться</span>
+        <i data-lucide="arrow-up-right"></i>
+      </a>
+      <button class="burger" id="burger-menu">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu">
+  <nav class="mobile-nav">
+    <a href="./#hero" class="mobile-link">Главная</a>
+    <a href="./#platform" class="mobile-link">Платформа</a>
+    <a href="./#benefits" class="mobile-link">Выгода</a>
+    <a href="./#innovations" class="mobile-link">Инновации</a>
+    <a href="./#contact" class="mobile-link btn-accent">Начать сейчас</a>
+  </nav>
+</div>
+
+<main>
+  <section class="legal-page" style="background: radial-gradient(circle at 50% 0%, var(--accent-soft) 0%, transparent 50%);">
+      <div class="container">
+
+          <div class="badge">Privacy Protection</div>
+          <h1 class="hero__title split-text">Конфиденциальность</h1>
+
+          <div class="legal-content reveal" style="max-width: 900px; margin-top: 40px;">
+
+              <p class="hero__subtitle">
+                  Ваша приватность — это основа доверия в цифровой среде. <strong>velox-nix.blog</strong> обеспечивает защиту ваших данных на уровне современных стандартов безопасности.
+              </p>
+
+              <hr style="border: 0; border-top: 1px solid var(--glass-border); margin: 40px 0;">
+
+              <div class="legal-section" style="margin-bottom: 60px;">
+                  <h2 style="color: var(--accent); margin-bottom: 25px;">01. Сбор и хранение данных</h2>
+                  <p style="color: var(--text-dim); margin-bottom: 20px;">
+                      Мы собираем данные исключительно для качественного оказания услуг: аутентификации, персонализации контента и технической поддержки.
+                  </p>
+
+                  <div class="tech-card" style="border-left: 4px solid var(--accent);">
+                      <p style="font-size: 0.9rem;">
+                          <strong>Срок хранения:</strong> Информация может храниться до 75 лет для соблюдения гарантийных обязательств или до момента прекращения деятельности компании.
+                      </p>
+                  </div>
+              </div>
+
+              <div class="legal-section" style="margin-bottom: 60px;">
+                  <h2 style="margin-bottom: 30px;">Категории информации</h2>
+
+                  <div class="tech__grid">
+                      <div class="tech-card">
+                          <i data-lucide="monitor" style="color: var(--accent); margin-bottom: 15px;"></i>
+                          <h3 style="font-size: 1rem; margin-bottom: 10px;">Технические данные</h3>
+                          <ul style="font-size: 0.85rem; color: var(--text-dim); line-height: 1.4;">
+                              <li>IP-адрес и время доступа</li>
+                              <li>Тип браузера и ОС</li>
+                              <li>URL ссылающихся сайтов</li>
+                          </ul>
+                      </div>
+                      <div class="tech-card">
+                          <i data-lucide="user-plus" style="color: var(--accent); margin-bottom: 15px;"></i>
+                          <h3 style="font-size: 1rem; margin-bottom: 10px;">Личные данные</h3>
+                          <ul style="font-size: 0.85rem; color: var(--text-dim); line-height: 1.4;">
+                              <li>Имя пользователя</li>
+                              <li>Email и номер телефона</li>
+                              <li>Информация о контрактах</li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="legal-section" style="margin-bottom: 60px;">
+                  <h2 style="margin-bottom: 30px;">Цели использования</h2>
+                  <ul class="check-list">
+                      <li><i data-lucide="check-circle"></i> Предоставление доступа к сервисам и продуктам.</li>
+                      <li><i data-lucide="check-circle"></i> Улучшение UX/UI на основе ваших предпочтений.</li>
+                      <li><i data-lucide="check-circle"></i> Информирование об акциях и системных обновлениях.</li>
+                  </ul>
+              </div>
+
+              <div class="innovations__banner" style="text-align: left; padding: 40px; border-color: rgba(255, 255, 255, 0.1);">
+                  <h3 style="color: var(--accent); margin-bottom: 15px;">Передача данных</h3>
+                  <p style="font-size: 0.95rem; color: var(--text);">
+                      Мы <strong>не передаем</strong> данные третьим лицам, за исключением случаев вашего прямого согласия или законных требований правоохранительных органов.
+                  </p>
+              </div>
+
+              <div class="legal-section" style="margin: 60px 0;">
+                  <h2 style="margin-bottom: 20px;">Cookies и маркеры</h2>
+                  <p style="color: var(--text-dim);">
+                      Файлы cookie помогают нам сохранять ваши сессии и анализировать трафик. Вы можете в любой момент отключить их в настройках браузера, однако это может ограничить доступ к некоторым функциям сайта.
+                  </p>
+              </div>
+
+              <div class="contact-box" style="background: var(--glass); padding: 40px; border-radius: var(--radius); border: 1px solid var(--glass-border);">
+                  <h3 style="margin-bottom: 15px;">Ваши права</h3>
+                  <p style="color: var(--text-dim); margin-bottom: 25px;">
+                      Вы имеете право редактировать или удалять свои данные. Для этого свяжитесь с нами:
+                  </p>
+                  <a href="mailto:hello@velox-nix.blog" class="btn btn--primary">
+                      <i data-lucide="mail"></i> hello@velox-nix.blog
+                  </a>
+              </div>
+
+              <p style="margin-top: 60px; font-size: 0.8rem; color: var(--text-dim); text-align: center;">
+                  Версия 2.1 | Дата последнего обновления: 24 Декабря 2025 г.
+              </p>
+          </div>
+      </div>
+  </section>
+</main>
+
+    <footer class="footer">
+  <div class="container footer__grid">
+    <div class="footer__col">
+      <a href="./#hero" class="logo footer__logo">
+        <span class="logo__dot"></span>
+        Velox-Nix
+      </a>
+      <p class="footer__description">
+        Инновационная цифровая инфраструктура для разработки и внедрения AI-ассистентов нового поколения.
+      </p>
+    </div>
+
+    <div class="footer__col">
+      <h4 class="footer__title">Навигация</h4>
+      <ul class="footer__links">
+        <li><a href="./#hero">Главная</a></li>
+        <li><a href="./#tech">Технологии</a></li>
+        <li><a href="./#benefits">Преимущества</a></li>
+        <li><a href="./#blog">Блог</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h4 class="footer__title">Документы</h4>
+      <ul class="footer__links">
+        <li><a href="./privacy.html">Политика конфиденциальности</a></li>
+        <li><a href="./cookies.html">Политика использования файлов cookie</a></li>
+        <li><a href="./terms.html">Условия использования</a></li>
+        <li><a href="./return.html">Политика возврата</a></li>
+        <li><a href="./disclaimer.html">Отказ от ответственности</a></li>
+        <li><a href="./personal-data-policy.html">Политика обработки персональных данных</a></li>
+
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h4 class="footer__title">Контакты</h4>
+      <ul class="footer__contacts">
+        <li>
+          <i data-lucide="phone"></i>
+          <a href="tel:+493012345678">+49 (30) 1234-5678</a>
+        </li>
+        <li>
+          <i data-lucide="mail"></i>
+          <a href="mailto:hello@velox-nix.blog">hello@velox-nix.blog</a>
+        </li>
+        <li>
+          <i data-lucide="map-pin"></i>
+          <span>Friedrichstraße 176, 10117 Berlin, Germany</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer__bottom">
+    <p>&copy; 2025 Velox-Nix. Платформа уже доступна в Европе.</p>
+  </div>
+</footer>
+    <div class="cookie-popup" id="cookie-popup">
+      <p>Этот сайт использует cookies для улучшения работы. Подробнее — в нашей <a href="./cookies.html">Cookie политике</a>.
+      </p>
+      <button class="btn btn--accent btn--sm" id="cookie-accept">Принять</button>
+    </div>
+    <script src="https://unpkg.com/split-type"></script>
+<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  </body>
+</html>
